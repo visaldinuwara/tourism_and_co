@@ -14,10 +14,10 @@ class LocationDetail extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-        ImageBanner("assets/images/kiyomizu-dera.png"),
-        TextSection(color:Colors.red), 
-        TextSection(color:Colors.blue), 
-        TextSection(color:Colors.amber)
+          ImageBanner("assets/images/kiyomizu-dera.png"),
+          TextSection(title: "summery", body: "something1"),
+          TextSection(title: "summery", body: "something1"),
+          TextSection(title: "summery", body: "something1"),
         ],
       ),
     );

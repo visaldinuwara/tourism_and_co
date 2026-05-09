@@ -13,7 +13,7 @@ class ImageBanner extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.grey
       ),
-      child: Image.asset(_assestPath,fit: BoxFit.cover,),
+      child: Image.asset(_assestPath,fit:BoxFit.fill),
     );
   }
 }

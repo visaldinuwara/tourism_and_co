@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/home/text_section.dart';
 
 class LocationDetail extends StatelessWidget {
   final String title;
-  const LocationDetail({super.key, required this.title});
+  const LocationDetail({required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -11,20 +12,7 @@ class LocationDetail extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            decoration: BoxDecoration(color: Colors.red),
-            child: Text(''),
-          ),
-          Container(
-            decoration: BoxDecoration(color: Colors.green),
-            child: Text(''),
-          ),
-          Container(
-            decoration: BoxDecoration(color: Colors.blue),
-            child: Text(''),
-          ),
-        ],
+        children: [TextSection(Colors.red), TextSection(Colors.blue), TextSection(Colors.amber)],
       ),
     );
   }

@@ -4,11 +4,13 @@ import 'package:flutter_app/screens/home/text_section.dart';
 import '../../models/location.dart';
 
 class LocationDetail extends StatelessWidget {
+  final int _locationId;
+
+  LocationDetail(this._locationId);
 
   @override
   Widget build(BuildContext context) {
-    final Locations=Location.fetchAll();
-    final location=Locations.first;
+    final location=Location.fetchById(_locationId);
     return Scaffold(
       appBar: AppBar(title: Text(location.name)),
       body: Column(

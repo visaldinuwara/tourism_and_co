@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/home/image_Banner.dart';
 import 'package:flutter_app/screens/home/text_section.dart';
+import '../../models/location.dart';
 
 class LocationDetail extends StatelessWidget {
-  final String title;
-  const LocationDetail({required this.title});
 
   @override
   Widget build(BuildContext context) {
+    final Locations=Location.fetchAll();
+    final location=Locations.first;
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: AppBar(title: Text(location.name)),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          ImageBanner("assets/images/kiyomizu-dera.png"),
-          TextSection(title: "summery", body: "something1"),
-          TextSection(title: "summery", body: "something1"),
-          TextSection(title: "summery", body: "something1"),
-        ],
-      ),
+          ImageBanner(location.imagePath),
+        ] ..addAll(textSections(location))),
     );
+  }
+  List<Widget> textSections(Location location){
+    return location.facts.map((fact)=>TextSection(fact.title,fact.text));
   }
 }
